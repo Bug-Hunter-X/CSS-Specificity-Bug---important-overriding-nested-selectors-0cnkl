@@ -1,0 +1,22 @@
+The solution involves removing the `!important` flag or using a more specific selector with higher specificity to override the parent's style:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red; /* Removed !important */
+}
+
+.child .grandchild {
+  color: green;
+}
+
+/* Alternative solution with higher specificity to override red without !important*/
+.child .grandchild {
+  color: green !important; /* If absolutely needed */ 
+}
+```
+
+By removing the `!important` from `.child`, the nested selector `.child .grandchild` now correctly applies its color green, demonstrating the correct behavior without the `!important` flag.
